@@ -1,7 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+
 <h1>Add Job</h1>
+<a href="{% url 'home'%}">Jobs List</a>
 
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form.as_table }}
     <button>Add Job</button>
 </form>
+{% endblock %}

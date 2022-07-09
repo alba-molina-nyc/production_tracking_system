@@ -1,15 +1,44 @@
+{% extends 'base.html' %} {% block content %}
 <h1>Jobs</h1>
-
 <a href="{% url 'add-job'%}">Add Job</a>
 
-<ul>
-{% for job in object_list %}
-<li>
-    <a href="{% url 'job-detail' job.pk %}">{{ job.order_num }}</a> - {{ job.created }} - {{ job.setter_name }} {{ job.setter_name.first_name }} {{ job.setter_name.last_name }} {{ job.setter_name.email }} <br/>
-    {{ job.description_text }}
-</li>
+
+<div class=".table-responsive{-sm|-md|-lg|-xl|-xxl}">
+  {% for job in object_list %} 
+    <table class="table">
+        <caption>Caption?</caption>
+        <thead>
+      
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Order Number</th>
+              <th scope="col">SKU</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Number of Stones</th>
+              <th scope="col">Description</th>
+              <th scope="col">Setter (In-House)</th>
+              <th scope="col">Date Created</th>
+              <th scope="col">Date Updated</th>
+            </tr>
+          </thead>
+   
+        <tbody>
 
 
-
-{% endfor %}
-</ul>
+          <tr>     
+     
+              <th scope="row">      <a href="{% url 'job-detail' job.pk %}"> See Details</a>       </th>
+            <td>{{ job.order_num }}</td>
+            <td>{{ job.SKU }}</td>
+            <td>{{ job.num_item }}</td>
+            <td>{{ job.num_stones }}</td>
+            <td>{{ job.description_text }}</td>
+            <td>Setter (In-House): {{ job.setter_name }} - {{ job.setter_name.first_name }} {{ job.setter_name.last_name }} - {{ job.setter_name.email }}</td>
+            <td>{{ job.created }}</td>
+            <td>{{ job.updated }}</td>
+      
+          </tr>
+        </tbody>
+    </table>
+  </div>
+  {% endfor %} {% endblock%}
