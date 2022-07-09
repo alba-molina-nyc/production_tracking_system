@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Home</h1>
-</body>
-</html>
+<h1>Jobs</h1>
+
+<ul>
+{% for job in object_list %}
+<li>
+    {{ job.order_num }} - {{ job.created }} - {{ job.setter_name }} {{ job.setter_name.first_name }} {{ job.setter_name.last_name }} {{ job.setter_name.email }} <br/>
+    {{ job.description_text }}
+</li>
+
+
+
+{% endfor %}
+</ul>

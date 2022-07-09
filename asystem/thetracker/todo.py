@@ -15,6 +15,10 @@ class Job:
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
 
+    # this is what makes it show up on the admin page
+    def __str__(self):
+        return self.order_num + ' | ' + str(self.setter_name) + ' | ' + str(self.created)
+
 
 
 # TODO: change DB to psql in asystem/asystem/settings.py
