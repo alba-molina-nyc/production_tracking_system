@@ -23,3 +23,4 @@ class Job:
 
 # TODO: change DB to psql in asystem/asystem/settings.py
 # TODO: add AWS DB 
+# TODO: if have time make sure to style (maybe bootstrap?)
