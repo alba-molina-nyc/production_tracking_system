@@ -3,7 +3,7 @@
 <ul>
 {% for job in object_list %}
 <li>
-    {{ job.order_num }} - {{ job.created }} - {{ job.setter_name }} {{ job.setter_name.first_name }} {{ job.setter_name.last_name }} {{ job.setter_name.email }} <br/>
+    <a href="{% url 'job-detail' job.pk %}">{{ job.order_num }}</a> - {{ job.created }} - {{ job.setter_name }} {{ job.setter_name.first_name }} {{ job.setter_name.last_name }} {{ job.setter_name.email }} <br/>
     {{ job.description_text }}
 </li>
 

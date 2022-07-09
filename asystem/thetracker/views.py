@@ -11,3 +11,7 @@ from .models import Job
 class HomeView(ListView):
     model = Job
     template_name = 'home.html'
+
+class JobDetailView(DetailView):
+    model = Job
+    template_name = 'job_details.html'
