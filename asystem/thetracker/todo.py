@@ -5,19 +5,33 @@ import datetime
 # Create your models here.
 
 # TODO: go to : asystem/thetracker/models.py and change setter_name to on_delete=models.SET(and send to a function that saves this item we are deleting to the admin user)
-class Job:
-    order_num = models.Charfield(max_length=275)
+from django.db import models
+from django.contrib.auth.models import User
+from django.urls import reverse
+
+# Create your models here.
+
+class Job(models.Model):
+    order_num = models.CharField(max_length=275)
     SKU = models.CharField(max_length=275)
     num_items = models.IntegerField()
     num_stones = models.IntegerField()
     description_text = models.TextField()
-    # setter_name = models.ForeignKey(User, on_delete=)
+    setter_name = models.ForeignKey(User, on_delete=models.PROTECT)
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
 
-    # this is what makes it show up on the admin page
     def __str__(self):
         return self.order_num + ' | ' + str(self.setter_name) + ' | ' + str(self.created)
+    
+    def get_absolute_url(self):
+        return reverse('add-job')
+        # or
+        return reverse('home') # to send back to home
+        # or
+        return reverse('job-detail', args=(str(self.id)))
+
+       
 
 
 

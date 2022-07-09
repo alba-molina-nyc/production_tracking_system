@@ -18,7 +18,7 @@ class Job(models.Model):
         return self.order_num + ' | ' + str(self.setter_name) + ' | ' + str(self.created)
     
     def get_absolute_url(self):
-        return reverse('home')
+        return reverse('add-job')
 
 
 
