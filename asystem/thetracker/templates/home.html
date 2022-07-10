@@ -98,21 +98,30 @@
   </form>
   <hr/>
 
-  <div class="row">
+  <!-- <div class="row">
     <ul>
-      {% for job in queryset %}
-      {% for job in Job.objects.all %} 
+      {% for qs in queryset %}
+      {% if job.order_num is job.order_num %}
+
+     
+ 
         <li>
           Order num: {{ job.order_num }}
+        </li>
+        {% elif job.sku is job.sku %}
+
           <span>SKU: {{ job.SKU }}</span>
+          {% elif job.setter_name is job.setter_name %}
           <span>Setter Name: {{ job.setter_name }}</span>
+          {% else job.created is job.created %}
           <span>Date Created: {{ job.created }}</span>
 
-        </li>
+          {% endif %}
+
         <hr />
         {% endfor %}
-      {% endfor %}
+    
     </ul>
-  </div>
+  </div> -->
   {% endblock%}
 
