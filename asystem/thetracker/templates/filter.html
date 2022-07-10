@@ -1,48 +1,4 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Jobs</h1>
-<a href="{% url 'add-job'%}">Add Job</a>
-
-
-<div class=".table-responsive{-sm|-md|-lg|-xl|-xxl}">
-  {% for job in object_list %} 
-    <table class="table">
-        <!-- <caption>Caption?</caption> -->
-        <thead>
-      
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">Order Number</th>
-              <th scope="col">SKU</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Number of Stones</th>
-              <th scope="col">Description</th>
-              <th scope="col">Setter (In-House)</th>
-              <th scope="col">Date Created</th>
-              <th scope="col">Date Updated</th>
-            </tr>
-          </thead>
-   
-        <tbody>
-
-
-          <tr>     
-     
-              <th scope="row">      <a href="{% url 'job-detail' job.pk %}"> See Details</a>       </th>
-            <td>{{ job.order_num }}</td>
-            <td>{{ job.SKU }}</td>
-            <td>{{ job.num_item }}</td>
-            <td>{{ job.num_stones }}</td>
-            <td>{{ job.description_text }}</td>
-            <td>Setter (In-House): {{ job.setter_name }} - {{ job.setter_name.first_name }} {{ job.setter_name.last_name }} - {{ job.setter_name.email }}</td>
-            <td>{{ job.created }}</td>
-            <td>{{ job.updated }}</td>
-      
-          </tr>
-        </tbody>
-        {% endfor %}
-    </table>
-  </div>
-
   <hr/>
   <h1>Filter Jobs</h1>
   <form method="GET" action=".">
@@ -101,7 +57,6 @@
   <div class="row">
     <ul>
       {% for job in queryset %}
-      {% for job in Job.objects.all %} 
         <li>
           Order num: {{ job.order_num }}
           <span>SKU: {{ job.SKU }}</span>
@@ -110,9 +65,7 @@
 
         </li>
         <hr />
-        {% endfor %}
       {% endfor %}
     </ul>
   </div>
   {% endblock%}
-
