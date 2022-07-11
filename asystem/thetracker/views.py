@@ -18,6 +18,10 @@ class JobDetailView(DetailView):
     template_name = 'job_details.html'
     fields = '__all__'
 
+    def get_total_amount(self, **kwargs):
+        # total = num_stones * .50 
+        pass
+
 class AddJobView(PermissionRequiredMixin, CreateView):
     permission_required = 'jobs.add_jobs'
     model = Job
