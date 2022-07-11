@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <a href="{% url 'add-job'%}">Add Job</a>
-<h1>Jobs</h1>
 
+<h1>Filter Jobs</h1>
 
 <form method="GET">
   <table>
@@ -10,6 +10,7 @@
   <button type="submit">Submit</button>
 
 </form>
+<h1> All Jobs</h1>
 
 {% for job in filter.qs %}
 <div class=".table-responsive{-sm|-md|-lg|-xl|-xxl}">
