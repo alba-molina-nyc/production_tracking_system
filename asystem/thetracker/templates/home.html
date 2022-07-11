@@ -4,8 +4,11 @@
 
 
 <form method="GET">
-  {{ filter.form }}
+  <table>
+    {{ filter.form.as_table }}
+  </table>
   <button type="submit">Submit</button>
+
 </form>
 
 {% for job in filter.qs %}

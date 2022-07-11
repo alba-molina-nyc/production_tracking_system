@@ -5,7 +5,9 @@
 
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_table }}
+    <table>
+        {{ form.as_table }}
+    </table>
     <button>Add Job</button>
 </form>
 {% endblock %}
