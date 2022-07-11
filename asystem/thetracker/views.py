@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView
 from .models import Job
 from .filters import JobFilter
 from django.contrib.auth.mixins import PermissionRequiredMixin
-
+    
 class HomeView(ListView):
     model = Job
     filter = JobFilter
