@@ -3,24 +3,14 @@
 <h1>Jobs</h1>
 
 
-
-{% for job in job_list %}
-<h1>{{ job.created }}</h1>
-
-{% endfor %}
-<h1>-------------------</h1>
 <form method="GET">
   {{ filter.form }}
   <button type="submit">Submit</button>
 </form>
 
 {% for job in filter.qs %}
-<h1>{{ job.created }}</h1>
-
-{% endfor %}
-
 <div class=".table-responsive{-sm|-md|-lg|-xl|-xxl}">
-  {% for job in object_list %}
+
   <table class="table">
     <!-- <caption>Caption?</caption> -->
     <thead>
@@ -49,16 +39,20 @@
         <td>{{ job.num_item }}</td>
         <td>{{ job.num_stones }}</td>
         <td>{{ job.description_text }}</td>
-        <td>Setter (In-House): {{ job.setter_name }} - {{ job.setter_name.first_name }} {{ job.setter_name.last_name }}
+        <td>Setter (In-House): {{ job.setter_name }} - {{ job.setter_name.first_name }}
+          {{ job.setter_name.last_name }}
           - {{ job.setter_name.email }}</td>
         <td>{{ job.created }}</td>
         <td>{{ job.updated }}</td>
 
       </tr>
     </tbody>
-    {% endfor %}
+
   </table>
 </div>
+
+{% endfor %}
+
 
 <hr />
 
