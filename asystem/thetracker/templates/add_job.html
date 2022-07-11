@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+{% if user.is_authenticated %}
 
 <h1>Add Job</h1>
 <a href="{% url 'home'%}">Jobs List</a>
@@ -10,4 +11,7 @@
     </table>
     <button>Add Job</button>
 </form>
+{% else %}
+<h4>you are not allowed here</h4>
+{% endif %}
 {% endblock %}

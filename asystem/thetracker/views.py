@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Job
 from .filters import JobFilter
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 class HomeView(ListView):
     model = Job
@@ -17,7 +18,8 @@ class JobDetailView(DetailView):
     template_name = 'job_details.html'
     fields = '__all__'
 
-class AddJobView(CreateView):
+class AddJobView(PermissionRequiredMixin, CreateView):
+    permission_required = 'jobs.add_jobs'
     model = Job
     template_name = 'add_job.html'
     fields = '__all__'
