@@ -1,71 +1,28 @@
 {% extends 'base.html' %} {% block content %}
-  <hr/>
-  <h1>Filter Jobs</h1>
-  <form method="GET" action=".">
-    <div class="form-row">
-      <div class="form-group col-12">
-          <div class="input-group">
-              <input class="form-control py-2 border-right-0 border" type="search" name="order_num" placeholder="Search by order..." />
-              <span class="input-group-append">
-                  <div class="input-group-text bg-transparent">
-                      <i class="fa fa-search"></i>
-                  </div>
-              </span>
-          </div>
-      </div>        
-  </div>
-  <div class="form-row">
-    <div class="form-group col-12">
-        <div class="input-group">
-            <input class="form-control py-2 border-right-0 border" type="search" name="SKU" placeholder="Search by SKU" />
-            <span class="input-group-append">
-                <div class="input-group-text bg-transparent">
-                    <i class="fa fa-search"></i>
-                </div>
-            </span>
-        </div>
-    </div>        
-</div>
-<div class="form-row">
-  <div class="form-group col-12">
-      <div class="input-group">
-          <input class="form-control py-2 border-right-0 border" type="search" name="setter_name" placeholder="Search by setter name" />
-          <span class="input-group-append">
-              <div class="input-group-text bg-transparent">
-                  <i class="fa fa-search"></i>
-              </div>
-          </span>
-      </div>
-  </div>        
-</div>
-<div class="form-row">
-  <div class="form-group col-12">
-      <div class="input-group">
-          <input class="form-control py-2 border-right-0 border" type="search" name="created" placeholder="Search Date Created" />
-          <span class="input-group-append">
-              <div class="input-group-text bg-transparent">
-                  <i class="fa fa-search"></i>
-              </div>
-          </span>
-      </div>
-  </div>        
-</div>
-  <button type="submit" class="btn btn-primary">Search</button>
-  </form>
-  <hr/>
+<h3> Filter </h3>
 
-  <div class="row">
-    <ul>
-      {% for job in queryset %}
-        <li>
-          Order num: {{ job.order_num }}
-          <span>SKU: {{ job.SKU }}</span>
-          <span>Setter Name: {{ job.setter_name }}</span>
-          <span>Date Created: {{ job.created }}</span>
 
-        </li>
-        <hr />
-      {% endfor %}
-    </ul>
+<div class="row">
+  <div class="col">
+    <div class="card card-body">
+      <form method="get">
+        {{ myFilter.form }}
+        <button class="btn btn-primary" type="submit">Search </button>
+      </form>
+    </div>
   </div>
-  {% endblock%}
+</div>
+
+
+
+
+<td>{{ job.order_num }}</td>
+<h1>hi</h1> -->
+
+
+
+
+
+
+
+{% endblock %}
