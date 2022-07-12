@@ -28,7 +28,7 @@
         <th scope="col">Quantity</th>
         <th scope="col">Number of Stones</th>
         <th scope="col">Description</th>
-        <th scope="col">Setter (In-House)</th>
+        <th scope="col">Created By: (In-House)</th>
         <th scope="col">Date Created</th>
         <th scope="col">Date Updated</th>
       </tr>
@@ -45,9 +45,9 @@
         <td>{{ job.num_items }}</td>
         <td>{{ job.num_stones }}</td>
         <td>{{ job.description_text }}</td>
-        <td>Setter (In-House): {{ job.setter_name }} - {{ job.setter_name.first_name }}
-          {{ job.setter_name.last_name }}
-          - {{ job.setter_name.email }}</td>
+        <td>created by (In-House): {{ job.creator_name }} - {{ job.creator_name.first_name }}
+          {{ job.creator_name.last_name }}
+          - {{ job.creator_name.email }}</td>
         <td>{{ job.created }}</td>
         <td>{{ job.updated }}</td>
 

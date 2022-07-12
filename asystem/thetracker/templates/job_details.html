@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
-
+<a href="{% url 'home'%}">Back</a>
+<br>
 <!-- <h1>Order Number: {{ job.order_num }}</h1> -->
 
 <!-- <small>SKU: {{ job.SKU }}</small> -->
@@ -10,6 +11,8 @@
 <small>Setter (In-House): {{ job.setter_name }} - {{ job.setter_name.first_name }} {{ job.setter_name.last_name }} - {{ job.setter_name.email }}</small>
 <small>Created: {{ job.created }}</small>
 <small>Updated: {{ job.updated }}</small> -->
+<br>
+<a href="">Create Memo</a>
 
-<a href="{% url 'home'%}">Back</a>
+
 {% endblock %}
