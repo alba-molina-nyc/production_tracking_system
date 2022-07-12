@@ -11,6 +11,7 @@ class Job(models.Model):
     num_stones = models.IntegerField()
     description_text = models.TextField()
     creator_name = models.ForeignKey(User, on_delete=models.PROTECT)
+    # setter_name = models.ForeignKey(User, on_delete=models.PROTECT)
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
 
@@ -20,13 +21,13 @@ class Job(models.Model):
     def get_absolute_url(self):
         return reverse('add-job')
 
+    # def get_absolute_url(self):
+    #     return reverse('add-setter')
+
     @property
     def calculate_total_amt(self):
         amt = 0.50
         num_stones = self.num_stones * amt
-
-
-
         return num_stones
 
 

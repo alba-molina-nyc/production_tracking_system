@@ -27,3 +27,9 @@ class AddJobView(PermissionRequiredMixin, CreateView):
     model = Job
     template_name = 'add_job.html'
     fields = '__all__'
+
+# class AddJobView(PermissionRequiredMixin, CreateView):
+#     permission_required = 'jobs.add_jobs'
+#     model = Job
+#     template_name = 'job_details.html'
+#     fields = 'setter_name'

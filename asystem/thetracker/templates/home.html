@@ -4,7 +4,6 @@
 {% endif %}
 
 <h1>Filter Jobs</h1>
-
 <form method="GET">
   <table>
     {{ filter.form.as_table }}
@@ -45,7 +44,7 @@
         <td>{{ job.num_items }}</td>
         <td>{{ job.num_stones }}</td>
         <td>{{ job.description_text }}</td>
-        <td>created by (In-House): {{ job.creator_name }} - {{ job.creator_name.first_name }}
+        <td>created by (In-House): {{ job.creator_name.id }} {{ job.creator_name }} - {{ job.creator_name.first_name }}
           {{ job.creator_name.last_name }}
           - {{ job.creator_name.email }}</td>
         <td>{{ job.created }}</td>
