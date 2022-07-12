@@ -20,6 +20,14 @@ class Job(models.Model):
     def get_absolute_url(self):
         return reverse('add-job')
 
+    @property
+    def calculate_total_amt(self):
+        amt = 0.50
+        num_stones = self.num_stones * amt
+
+
+
+        return num_stones
 
 
 

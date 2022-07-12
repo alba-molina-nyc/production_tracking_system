@@ -1,18 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 <a href="{% url 'home'%}">Back</a>
 <br>
-<!-- <h1>Order Number: {{ job.order_num }}</h1> -->
 
-<!-- <small>SKU: {{ job.SKU }}</small> -->
-<!-- <small>Quantity: {{ job.num_items }}</small> -->
-<small>Number of Stones: {{ job.num_stones }}</small>
-<small>Total Amount: {{ job.num_stones }} ** .5 === per order!</small>
-<!-- <small>Description: {{ job.description_text }}</small>
-<small>Setter (In-House): {{ job.setter_name }} - {{ job.setter_name.first_name }} {{ job.setter_name.last_name }} - {{ job.setter_name.email }}</small>
-<small>Created: {{ job.created }}</small>
-<small>Updated: {{ job.updated }}</small> -->
+<small>SKU: {{ job.SKU }}</small>
 <br>
+<small>Order Number: {{ job.order_num }}</small>
+<br>
+<small>Stones: {{ job.num_stones }}</small>
+<br>
+<small>Qty: {{ job.num_items }}</small>
+<br>
+<small>Job Description: {{ job.description_text }}</small>
+
 <a href="">Create Memo</a>
+
+
 
 
 {% endblock %}
